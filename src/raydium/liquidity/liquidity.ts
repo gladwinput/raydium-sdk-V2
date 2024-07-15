@@ -867,13 +867,13 @@ export default class LiquidityModule extends ModuleBase {
       });
     txBuilder.addInstruction(ownerTokenAccountBaseInstruction || {});
 
-    if (!_tokenAccountIn)
-      this.logAndCreateError("input token account not found", {
-        token: tokenIn.symbol || tokenIn.address,
-        tokenAccountIn: _tokenAccountIn,
-        inputTokenUseSolBalance,
-        associatedOnly,
-      });
+    // if (!_tokenAccountIn)
+    //   this.logAndCreateError("input token account not found", {
+    //     token: tokenIn.symbol || tokenIn.address,
+    //     tokenAccountIn: _tokenAccountIn,
+    //     inputTokenUseSolBalance,
+    //     associatedOnly,
+    //   });
 
     const { account: _tokenAccountOut, instructionParams: ownerTokenAccountQuoteInstruction } =
       await this.scope.account.getOrCreateTokenAccount({
